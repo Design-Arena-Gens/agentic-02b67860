@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #1f2933;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f6f8fc 0%, #eef2ff 100%);
+  min-height: 100vh;
+}
+
+.app-shell {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 32px rgba(15, 28, 49, 0.08);
+  margin-bottom: 20px;
+}
+
+.app-header h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.app-header p {
+  margin: 0;
+  color: #51606f;
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.header-meta button {
+  background: #1f73b7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.header-meta span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.section-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-tab {
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 14px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 22px rgba(103, 114, 229, 0.08);
+}
+
+.section-tab:hover {
+  transform: translateY(-2px);
+}
+
+.section-tab.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 14px 28px rgba(59, 130, 246, 0.25);
+}
+
+.section-content {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 20px 40px rgba(31, 41, 55, 0.08);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(160deg, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0.9));
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.card h3,
+.card h4 {
+  margin: 0;
+}
+
+.card strong {
+  font-size: 34px;
+  color: #1f73b7;
+}
+
+.card ul {
+  margin: 0;
+  padding-inline-start: 18px;
+  color: #334155;
+}
+
+.card ul li {
+  margin-bottom: 6px;
+}
+
+.card span.status {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.card-alert {
+  border: 1px solid #f97316;
+  background: rgba(251, 146, 60, 0.1);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card span {
+  font-size: 14px;
+  color: #475569;
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.progress {
+  position: relative;
+  height: 10px;
+  background: rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress .bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #34d399, #10b981);
+}
+
+.progress span {
+  position: absolute;
+  right: 8px;
+  top: -24px;
+  font-size: 12px;
+  color: #0f172a;
+}
+
+.panel h3,
+.panel p,
+.panel table {
+  margin: 0 0 16px;
+}
+
+.panel table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(248, 250, 252, 0.6);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.panel th,
+.panel td {
+  padding: 14px 16px;
+  text-align: right;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.panel tr:last-child td {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-جاهز,
+.status-مكتمل,
+.status-ممتاز {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.status-قيد,
+.status-جاري,
+.status-صيانة {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.status-نشط {
+  background: rgba(52, 211, 153, 0.25);
+  color: #059669;
+}
+
+.status-مجدول {
+  background: rgba(59, 130, 246, 0.18);
+  color: #1f51c6;
+}
+
+.report-card {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  background: rgba(248, 250, 252, 0.8);
+}
+
+.report-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.report-card h4 {
+  margin: 0 0 6px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 8px;
+  color: #0f172a;
+}
+
+.form-grid input,
+.form-grid textarea {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: white;
+}
+
+.form-grid button,
+.login-card button {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  border: none;
+  color: white;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.form-grid button:hover,
+.login-card button:hover {
+  transform: translateY(-2px);
+}
+
+.form-grid .span-2 {
+  grid-column: span 2;
+}
+
+.messages-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.messages-list li {
+  background: rgba(241, 245, 249, 0.8);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.messages-list h4 {
+  margin-top: 0;
+}
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.login-card {
+  width: min(420px, 92vw);
+  background: linear-gradient(160deg, rgba(59, 130, 246, 0.95), rgba(14, 165, 233, 0.9));
+  color: white;
+  padding: 36px;
+  border-radius: 24px;
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.45);
+  display: grid;
+  gap: 16px;
+}
+
+.login-card h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.login-card p {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.login-card label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.login-card input {
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #fef3c7;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .form-grid button,
+  .form-grid .span-2 {
+    grid-column: span 1;
+  }
+}
